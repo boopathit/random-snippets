@@ -1,4 +1,10 @@
-function FormExample() {
+import React, { useState } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
+const FormExample = () => {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -19,17 +25,17 @@ function FormExample() {
             <Col xs={12}>
               <Form.Check
                 inline
-                label="1"
+                label="yes"
                 name="group1"
-                type={type}
-                id={`inline-${type}-1`}
+                type="radio"
+                id="yes"
               />
               <Form.Check
                 inline
-                label="2"
+                label="no"
                 name="group1"
-                type={type}
-                id={`inline-${type}-2`}
+                type="radio"
+                id="no"
               />
             </Col>
           </Row>
@@ -72,6 +78,5 @@ function FormExample() {
       <Button type="submit">Submit form</Button>
     </Form>
   );
-}
-
-render(<FormExample />);
+};
+export default FormExample;
